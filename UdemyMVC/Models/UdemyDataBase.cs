@@ -17,7 +17,7 @@ namespace UdemyMVC.Models
 		public DbSet<Topic> Topics { get; set; }
 		protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 		{
-			optionsBuilder.UseSqlServer("Server=DESKTOP-OAJHR63\\SQLEXPRESS;Database=UdemyDataBase;Trusted_Connection=True;Encrypt=False");
+			optionsBuilder.UseSqlServer("Server=DESKTOP-SPBU74G;Database=UdemyDataBase;Trusted_Connection=True;Encrypt=False");
 			base.OnConfiguring(optionsBuilder);
 		}
 		protected override void OnModelCreating(ModelBuilder modelBuilder)

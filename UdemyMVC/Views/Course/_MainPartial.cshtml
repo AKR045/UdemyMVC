@@ -1,0 +1,65 @@
+﻿<div style="background-color:#2d2f31" id="sec1">
+    <div class="container" style=" box-sizing:border-box;padding-bottom:30px ">
+        <div class="container row " style="margin-left:60px">
+            <div class=" col-6">
+                <div class="mt-2 pt-3">
+                    <a href="#" class="fs-6" style="color:#c0c4fc; text-decoration:none;font-weight:500 "> Category > @Model.Category[0] </a>
+
+                    @*  @foreach(var item in Model.Category)
+                    {
+
+                    <span style="color:aliceblue">@item</span>
+
+                    } *@
+                </div>
+                <div class="mt-3">
+                    <h3 style="color:aliceblue">@Model.CourseName </h3>
+
+                    <span class="d-block" style="color:aliceblue ;font:100">
+                        @Model.Title
+                    </span>
+                </div>
+
+                <div class="mt-2">
+                    <span style="color:aliceblue">@Model.NumberOfStudent student </span>
+                    &nbsp
+                    <partial name="_RatingPartial" /><span style="color:aliceblue">@Model.Rating </span>
+                </div>
+                <div class="mt-2">
+                    <span style="color:aliceblue">Created by <a href="#Instructor" style="color:aliceblue"> @Model.Instructor</a></span>
+                </div>
+                <div class="mt-2">
+                    <span style="color:aliceblue">Last Update --</span>
+                    <span style="color:aliceblue"> <i class="bi bi-globe"></i> English </span> <span style="color:aliceblue">
+                        <i class="bi bi-badge-cc-fill"></i>
+                        English [CC], Arabic [Auto]
+                    </span>
+
+                </div>
+            </div>
+            <div class="card  mt-4 col-6" style="width: 18rem; margin:auto ; position:fixed;top:50px; right:200px">
+
+                <img src="~/img/@Model.CourseImg" height="180" class="card-img-top" />
+
+                <div class="card-body">
+                    <p class="card-text fw-bold">Subscribe to Udemy’s top courses</p>
+                    <a href="#" class="btn btn-outline-success " style="width:230px">Subscribe</a>
+                    <p class="text-secondary text-center " style="font-size:small">Get this course, plus 11,000+ of our top-rated courses, with Personal Plan</p>
+                    <div class="d-flex">
+                        <hr style="width:110px" /> <p class="text-secondary text-center " style="font-size:x-small">OR</p> <hr style="width:110px" />
+                    </div>
+                    <h5 class="card-title">$ @Model.Price</h5>
+
+                    <a href="#" class="btn btn-outline-success " style="width:230px">Add to cart</a>
+                    <p class="text-secondary text-center " style="font-size:small">30-Day Money-Back Guarantee</p>
+                    <p class="text-secondary text-center " style="font-size:small">Full Lifetime Access</p>
+
+                </div>
+            </div>
+
+
+        </div>
+
+    </div>
+</div>
+</div>

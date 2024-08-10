@@ -14,6 +14,7 @@ namespace UdemyMVC
 
 			// Add services to the container.
 			builder.Services.AddControllersWithViews(); 
+			builder.Services.AddScoped<ICourseRepository,CourseRepository>();	
 			//Inject DataBase Connection 
 			builder.Services.AddDbContext<UdemyDataBase>(option =>
 			{

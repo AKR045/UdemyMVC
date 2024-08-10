@@ -14,7 +14,17 @@ namespace UdemyMVC.ViewModels
         public List<string> Category { get; set; }
         public int NumberOfStudent { get; set; }
         public string Rating { get; set; }
-        public List<Chapter> chapters { get; set; }
+
+        // public List<string> Chapters { get; set; }
+        //public List<string> Topics { get; set; }
+
+        /* Instructor Data */
+        public int AllRateCount { get; set; }
+        public string InstructorIamge { get; set; }
+        public List<Course> InstructorAllCourses { get; set; }
+        public int InstructorAllStudentsNumber { get; set; }
+        public int InstructorAllCoursesNumber { get; set; }
+        public string AllCourseRate { get; set; }
 
     }
 }

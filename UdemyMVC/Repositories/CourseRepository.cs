@@ -15,13 +15,17 @@ namespace UdemyMVC.Repositories
         }
         public async Task<Course?> GetCoursesByCourseIdAsync(int courseId)
         {
-            return await _dbSet
-                .Include(c => c.Instructor).ThenInclude(c => c.User)
-                .Include(c => c.CourseRates)
+            return await _dbSet.Include(c => c.Instructor).ThenInclude(c => c.User)
                 .Include(c => c.CategoryCourses).ThenInclude(c => c.Category)
+                .Include(c => c.CourseRates)
                 .Include(c => c.Enrollment)
-                .Include(c => c.Chapters)
                 .Where(c => c.ID == courseId).FirstOrDefaultAsync();
         }
+
+
+    
+
+
+
     }
 }

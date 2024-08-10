@@ -1,0 +1,19 @@
+﻿<div class="container mt-4  pb-4">
+    <div class="container row " style="margin-left:60px;width:680px">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">Description</h5>
+                <p class="card-text">
+                    @Model.Description.Substring(0, 200)
+                    <span id="moreContent" class="collapse">
+                        @Model.Description.Substring(0, 600)
+                    </span>
+                </p>
+                <button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#moreContent" aria-expanded="false" aria-controls="moreContent">
+                    See More
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
