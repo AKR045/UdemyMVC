@@ -55,7 +55,8 @@
     <section class="container pt-5 pb-5">
         <div class="container">
         <div class="container" style="margin-left:60px;width:680px">
-            <p class="fw-bold fs-4">More Courses by &nbsp <a href="#Instructor" style="text-decoration:none;color:#5124c3">@Model.Instructor</a> </p>
+            <p class="fw-bold fs-4 ">More Courses by &nbsp <a href="#Instructor" style="text-decoration:none;color:#5124c3">@Model.Instructor</a> </p>
+           <div class="d-flex">
             @foreach (var item in Model.InstructorAllCourses){
                 <div class="card" style="width: 18rem;">
                     <img src="/img/angular-feature-image-1.png" height="150px" class="card-img-top" alt="...">
@@ -67,6 +68,7 @@
                     </div>
                 </div>
             }
+                </div>
     </div>
         </div>
     </section>

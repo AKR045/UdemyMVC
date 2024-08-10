@@ -17,6 +17,8 @@ namespace UdemyMVC.Controllers
         public async Task<IActionResult> CourseDetailes(int id)
         {
             Course course = await courseRepository.GetCoursesByCourseIdAsync(id);
+            int instId = course.InstructorID;
+            IEnumerable<Course> courses = await courseRepository.GetCoursesByInstructorIdAsync(instId);
 
             if (course == null)
             {
@@ -45,9 +47,9 @@ namespace UdemyMVC.Controllers
             /* Instructor Data */
             courseVM.AllRateCount=countRateAll;
             courseVM.InstructorIamge=course.Instructor.User.Image;
-            courseVM.InstructorAllCourses=course.Instructor.Courses.ToList();
-            courseVM.InstructorAllCoursesNumber=course.Instructor.Courses.Count();
-            courseVM.InstructorAllStudentsNumber=course.Instructor.Courses.Select(c=>c.Enrollment).Count();
+            courseVM.InstructorAllCourses = courses.ToList();
+            courseVM.InstructorAllCoursesNumber= courses.Count();
+            courseVM.InstructorAllStudentsNumber= courses.Select(c=>c.Enrollment).Distinct().Count();
             courseVM.AllCourseRate = countRateAll > 0 ? (sumRateAll / countRateAll).ToString():"1";
             
             return View("CourseDetailes", courseVM);
