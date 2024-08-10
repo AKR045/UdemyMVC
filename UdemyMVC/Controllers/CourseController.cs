@@ -34,9 +34,10 @@ namespace UdemyMVC.Controllers
             courseVM.Description = course.Description;
             courseVM.CourseImg = course.CourseImage;
             courseVM.Price = course.Price;
-            // courseVM.Chapters = new List<string> { " A "," B "};
+            //courseVM.Chapters = course.Chapters.ToList();
             //courseVM.Topics = course.Chapters.Select(c=>c.Topics).ToString();
             courseVM.Rating = countRate > 0 ? (sumRate / countRate).ToString() : "1";
+            courseVM.NumberOfRating = countRate;
             courseVM.NumberOfStudent = course.Enrollment.Count();
             courseVM.Instructor = course.Instructor.User.FullName;
             courseVM.Category = course.CategoryCourses.Select(c => c.Category.CategoryName).ToList();
@@ -48,7 +49,7 @@ namespace UdemyMVC.Controllers
             courseVM.InstructorAllCoursesNumber=course.Instructor.Courses.Count();
             courseVM.InstructorAllStudentsNumber=course.Instructor.Courses.Select(c=>c.Enrollment).Count();
             courseVM.AllCourseRate = countRateAll > 0 ? (sumRateAll / countRateAll).ToString():"1";
-
+            
             return View("CourseDetailes", courseVM);
         }
     }

@@ -49,68 +49,24 @@
 
 
 
-@* 
-    <div class="container" style="margin-left:60px;width:680px">
-        @foreach(var item in Model.InstructorAllCourses)
-        {
-            <div class="card-group  style=" margin-left:60px;width:680px"">
-                <div class="card">
-                    <img src="/uploads/4d8007c7-6bfb-4e8c-8ef2-a5c1ed5e796c.jpeg" height="100px" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">@item.CourseName</h5>
-                       
-                            <p><partial name="_RatingPartial" /> @item.CourseRates.Select(c=>c.Rate).FirstOrDefault()</p>
-                    </div>
-                </div>
-            </div>
-        }
-    </div> *@
- @*    <section class="container">
-    <div class="container" style="margin-left:60px;width:680px">
-        <div class="card-group">
-            <div class="card" style="width:226px">
-                <img src="..." class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                   >
-                </div>
-            </div>
-           
-            <div class="card" style="width:226px">
-                <img src="/uploads/4d8007c7-6bfb-4e8c-8ef2-a5c1ed5e796c.jpeg" height="200px" class="card-img-top" alt="...">
-                <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                  
-                </div>
-            </div>
-        </div>
-                </div>
-    </section>
- *@
-
-
-
-
-
 
 
 
     <section class="container pt-5 pb-5">
+        <div class="container">
         <div class="container" style="margin-left:60px;width:680px">
-            <p class="fw-bold fs-4">More Courses by<a href="#Instructor" style="text-decoration:none;color:#5124c3">@Model.Instructor</a> </p>
+            <p class="fw-bold fs-4">More Courses by &nbsp <a href="#Instructor" style="text-decoration:none;color:#5124c3">@Model.Instructor</a> </p>
             @foreach (var item in Model.InstructorAllCourses){
-    <div class="row row-cols-1 row-cols-md-2 g-4">
-        <div class="col">
-            <div class="card">
-                <img src="/uploads/4d8007c7-6bfb-4e8c-8ef2-a5c1ed5e796c.jpeg" height="200px" class="card-img-top" alt="...">
-                <div class="card-body" style="line-height:2">
-                    <h5>@item.CourseName</h5>
-                    <p>@item.Title</p>
-                     <h6> $ @item.Price </h6>
+                <div class="card" style="width: 18rem;">
+                    <img src="/img/angular-feature-image-1.png" height="150px" class="card-img-top" alt="...">
+                    <div class="card-body">
+                        <p class="card-text"> <h5>@item.CourseName</h5>
+                        <p class="fs-6">@item.Title.Substring(0,50)</p>
+                        <h6> $ @item.Price </h6>
+                        </p>
+                    </div>
                 </div>
-            </div>
-        </div>
-    </div>
             }
     </div>
+        </div>
     </section>

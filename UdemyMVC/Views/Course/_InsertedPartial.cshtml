@@ -4,9 +4,12 @@
             <div class=" col-6  " style="height:65px;box-sizing:border-box;padding:5px 0 0 ">
 
                 <h5 style="color:aliceblue">@Model.CourseName </h5>
-                <span style="color:aliceblue">@Model.NumberOfStudent student </span>
-                &nbsp
-                <partial name="_RatingPartial" /><span style="color:aliceblue">@Model.Rating </span>
+                <span style="color:aliceblue">
+                    <p style="color:orange;display:inline">@Model.Rating</p> &nbsp
+                    <partial name="_RatingPartial" /> &nbsp
+                    <p style="color:#c0c4fc;display:inline"> (@Model.NumberOfRating ratings) </p> &nbsp
+                    <p style="color:aliceblue;display:inline "> @Model.NumberOfStudent students </p>
+                </span>
 
             </div>
         </div>

@@ -1,12 +1,13 @@
 ﻿
 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
-<span class="fa fa-star  " id="star"></span>
-<span class="fa fa-star  " id="star"></span>
-<span class="fa fa-star  " id="star"></span>
-<span class="fa fa-star  " id="star"></span>
-<span class="fa fa-star  " id="star"></span>
+<span class="fa fa-star  stt" ></span>
+<span class="fa fa-star  stt" ></span>
+<span class="fa fa-star  stt" ></span>
+<span class="fa fa-star  stt" ></span>
+<span class="fa fa-star  stt" ></span>
 
 
 <style>
@@ -14,16 +15,17 @@
         color: orange;
     }
 </style>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 
 <script>
 
-
-
+    var star = document.querySelectorAll(".stt")
     var loop = Math.floor(@Model.Rating)
-    console.log(loop);
     for (var i = 0; i < loop; i++) {
         star[i].classList.add("checked")
     }
 </script>
+
+
+
+

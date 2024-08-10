@@ -21,9 +21,14 @@
                 </div>
 
                 <div class="mt-2">
-                    <span style="color:aliceblue">@Model.NumberOfStudent student </span>
-                    &nbsp
-                    <partial name="_RatingPartial" /><span style="color:aliceblue">@Model.Rating </span>
+                    
+                    
+                    <span style="color:aliceblue">
+                        <p style="color:orange;display:inline">@Model.Rating</p> &nbsp 
+                        <partial name="_RatingMainPartial" /> &nbsp 
+                        <p style="color:#c0c4fc;display:inline"> (@Model.NumberOfRating rating) </p> &nbsp
+                        <p style="color:aliceblue;display:inline "> @Model.NumberOfStudent student </p>
+                    </span>
                 </div>
                 <div class="mt-2">
                     <span style="color:aliceblue">Created by <a href="#Instructor" style="color:aliceblue"> @Model.Instructor</a></span>
