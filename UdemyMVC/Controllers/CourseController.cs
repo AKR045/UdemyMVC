@@ -16,7 +16,7 @@ namespace UdemyMVC.Controllers
 
         public async Task<IActionResult> CourseDetailes(int id)
         {
-            Course course = await courseRepository.GetCoursesByCourseIdAsync(id);
+            Course? course = await courseRepository.GetCoursesByCourseIdAsync(id);
             int instId = course.InstructorID;
             IEnumerable<Course> courses = await courseRepository.GetCoursesByInstructorIdAsync(instId);
 
