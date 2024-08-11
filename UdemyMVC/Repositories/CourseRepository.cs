@@ -11,7 +11,7 @@ namespace UdemyMVC.Repositories
 
         public async Task<IEnumerable<Course>> GetCoursesByInstructorIdAsync(int instructorId)
         {
-            return await _dbSet.Where(c => c.InstructorID == instructorId).ToListAsync();
+            return await _dbSet.Include(c => c.CourseRates).Where(c => c.InstructorID == instructorId).ToListAsync();
         }
         public async Task<Course?> GetCoursesByCourseIdAsync(int courseId)
         {
