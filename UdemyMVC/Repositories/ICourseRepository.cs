@@ -7,7 +7,7 @@ namespace UdemyMVC.Repositories
     public interface ICourseRepository : IRepository<Course>
     {
 
-        Task<IEnumerable<Course>> GetCoursesByInstructorIdAsync(int instructorId);
+        Task<IEnumerable<Course?>> GetCoursesByInstructorIdAsync(int instructorId);
         Task<Course?> GetCoursesByCourseIdAsync(int courseId);
     }
 }

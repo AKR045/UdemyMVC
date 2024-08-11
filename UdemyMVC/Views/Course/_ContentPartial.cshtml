@@ -1,4 +1,4 @@
-﻿@* <div class="container mt-2">
+﻿<div class="container mt-2">
     <div class="container row " style="margin-left:60px;width:680px">
         <div class=" col-12">
             <p class="fw-bolder fs-4">Course Content</p>
@@ -18,7 +18,9 @@
                                 <div class="accordion-body">
                                 @foreach(var top in Model.Topics)
                                 {
+                                    <div>
                                     <a href="#">@top</a>
+                                    </div>
                                 }
                             </div>
                             </div>
@@ -32,4 +34,4 @@
         </div>
     </div>
 
-</div> *@
+</div>

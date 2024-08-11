@@ -16,8 +16,8 @@ namespace UdemyMVC.ViewModels
         public string Rating { get; set; }
         public int NumberOfRating { get; set; }
 
-        //public List<Chapter> Chapters { get; set; }
-        //public List<string> Topics { get; set; }
+        public List<Chapter> Chapters { get; set; }
+        public List<string> Topics { get; set; }
 
         /* Instructor Data */
         public int AllRateCount { get; set; }

@@ -18,7 +18,7 @@ namespace UdemyMVC.Controllers
         {
             Course? course = await courseRepository.GetCoursesByCourseIdAsync(id);
             int instId = course.InstructorID;
-            IEnumerable<Course> courses = await courseRepository.GetCoursesByInstructorIdAsync(instId);
+            IEnumerable<Course?> courses = await courseRepository.GetCoursesByInstructorIdAsync(instId);
 
             if (course == null)
             {
@@ -36,8 +36,8 @@ namespace UdemyMVC.Controllers
             courseVM.Description = course.Description;
             courseVM.CourseImg = course.CourseImage;
             courseVM.Price = course.Price;
-            //courseVM.Chapters = course.Chapters.ToList();
-            //courseVM.Topics = course.Chapters.Select(c=>c.Topics).ToString();
+            courseVM.Chapters = course.Chapters.ToList();
+            courseVM.Topics = course.Chapters.SelectMany(c=>c.Topics).Select(c=>c.Name).ToList();
             courseVM.Rating = countRate > 0 ? (sumRate / countRate).ToString("0.0") : "1";
             courseVM.NumberOfRating = countRate;
             courseVM.NumberOfStudent = course.Enrollment.Count();

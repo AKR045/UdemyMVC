@@ -18,8 +18,9 @@ namespace UdemyMVC.Repositories
             return await _dbSet.Include(c => c.Instructor).ThenInclude(c => c.User)
                 .Include(c => c.CategoryCourses).ThenInclude(c => c.Category)
                 .Include(c => c.CourseRates)
+                .Include(c=>c.Chapters).ThenInclude(c=>c.Topics)
                 .Include(c => c.Enrollment)
-                .Where(c => c.ID == courseId).FirstOrDefaultAsync();
+                .FirstOrDefaultAsync(c => c.ID == courseId);
         }
 
 
