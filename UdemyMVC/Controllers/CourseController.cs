@@ -37,7 +37,7 @@ namespace UdemyMVC.Controllers
             courseVM.CourseImg = course.CourseImage;
             courseVM.Price = course.Price;
             courseVM.Chapters = course.Chapters.ToList();
-            courseVM.Topics = course.Chapters.SelectMany(c=>c.Topics).Select(c=>c.Name).ToList();
+            //courseVM.Topics = course.Chapters.SelectMany(c=>c.Topics).ToList();
             courseVM.Rating = countRate > 0 ? (sumRate / countRate).ToString("0.0") : "1";
             courseVM.NumberOfRating = countRate;
             courseVM.NumberOfStudent = course.Enrollment.Count();
